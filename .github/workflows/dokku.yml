@@ -1,4 +1,9 @@
 ---
+name: Deploy to dokku
+on:
+  push:
+    branches:
+      - master
 steps:
   - uses: actions/checkout@v2
     with:

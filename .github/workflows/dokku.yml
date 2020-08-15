@@ -4,15 +4,17 @@ on:
   push:
     branches:
       - master
-steps:
-  - uses: actions/checkout@v2
-    with:
-        fetch-depth: 0
-  - id: deploy
-    name: Deploy to dokku
-    uses: idoberko2/dokku-deploy-github-action@v1
-    with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        dokku-host: ${{ secrets.DOKKU_HOST }}
-        app-name: ${{ secrets.DOKKU_APP_NAME }}
-    
+jobs:
+  deploy:
+    runs-on: alpine:3.12.0
+    steps:
+    - uses: actions/checkout@v2
+        with:
+            fetch-depth: 0
+    - id: deploy
+        name: Deploy to dokku
+        uses: idoberko2/dokku-deploy-github-action@v1
+        with:
+            ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+            dokku-host: ${{ secrets.DOKKU_HOST }}
+            app-name: ${{ secrets.DOKKU_APP_NAME }}

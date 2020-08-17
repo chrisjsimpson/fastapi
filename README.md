@@ -8,6 +8,7 @@ and thanks to https://github.com/idoberko2/dokku-deploy-github-action
 ## What do I get?
 
 - Automated FastAPI deployments from the main branch using Dokku via Github actions
+- Automated TLS certificates and renewal
 
 ## How long will it take?
 

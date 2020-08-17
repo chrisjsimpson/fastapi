@@ -1,8 +1,9 @@
 # Example FastAPI tutorial with automated deployment
 
-Tutorial: https://blog.karmacomputing.co.uk/fastapi-production-deployment-with-dokku-and-github-actions/
+Step-by-step tutorial: https://blog.karmacomputing.co.uk/fastapi-production-deployment-with-dokku-and-github-actions/
 
 Built upon the *amazing* documentation at: https://fastapi.tiangolo.com/tutorial/
+and thanks to https://github.com/idoberko2/dokku-deploy-github-action
 
 ## What do I get?
 
@@ -11,6 +12,10 @@ Built upon the *amazing* documentation at: https://fastapi.tiangolo.com/tutorial
 ## How long will it take?
 
 - About 30mins
+
+## How much will it cost me?
+
+- Your time, and about $5p/m if you don't already have a server
 
 ## How do I run it locally?
 

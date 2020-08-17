@@ -4,6 +4,14 @@ Tutorial: https://blog.karmacomputing.co.uk/fastapi-production-deployment-with-d
 
 Built upon the *amazing* documentation at: https://fastapi.tiangolo.com/tutorial/
 
+## What do I get?
+
+- Automated FastAPI deployments from the main branch using Dokku via Github actions
+
+## How long will it take?
+
+- About 30mins
+
 ## How do I run it locally?
 
 Create & activate a python3 [virtual environment](https://docs.python.org/3/tutorial/venv.html) (optional, but **very** recommended)

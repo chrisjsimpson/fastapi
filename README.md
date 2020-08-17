@@ -9,6 +9,7 @@ and thanks to https://github.com/idoberko2/dokku-deploy-github-action
 
 - Automated FastAPI deployments from the main branch using Dokku via Github actions
 - Automated TLS certificates and renewal
+- Automated OpenAPI docs thanks to FastAPI [Demo](https://api.pcpink.co.uk/docs)
 
 ## How long will it take?
 

@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+import urllib.request
+import json
 
 app = FastAPI()
 
@@ -14,3 +16,10 @@ async def read_item(item_id: int):
 async def random():
     from random import random
     return {"random_number": random()}
+
+@app.get("/xkcd")
+async def xkcd_current():
+    f = urllib.request.urlopen('http://xkcd.com/info.0.json')
+    resp = f.read().decode('utf-8')
+    return json.loads(resp)
+

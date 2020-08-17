@@ -45,6 +45,3 @@ Port already in use? Close the other app, or use a difference port:
 ```
 uvicorn main:app --port 8001 --reload 
 ```
-
-How do I run this? 
-uvicorn main:app --reload

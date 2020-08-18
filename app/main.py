@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 import urllib.request
 import json
 
@@ -23,12 +23,9 @@ async def xkcd_current():
     resp = f.read().decode('utf-8')
     return json.loads(resp)
 
-@app.get("/xkcd/{commic_id}")
-async def xkcd_current(commic_id: int):
-    try:
-        f = urllib.request.urlopen(f"http://xkcd.com/{commic_id}/info.0.json")
-        resp = f.read().decode('utf-8')
-        return json.loads(resp)
-    except urllib.error.HTTPError:
-        raise HTTPException(status_code=404, detail="Comic not found")
+@app.get("/xkcd/{comic_id}")
+async def xkcd_comic(comic_id: int):
+    f = urllib.request.urlopen('http://xkcd.com/info.0.json')
+    resp = f.read().decode('utf-8')
+    return json.loads(resp)
 

@@ -29,6 +29,55 @@ Install requirements:
 pip install -r requirements.txt
 ```
 
+Manually seed the database (not needed because using `create_all` in `main.py`, but useful to know how to access the db without 
+booting the entire app):
+
+```
+python
+Python 3.6.8 (default, Apr  9 2019, 04:59:38) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from app import models
+>>> from app.database import engine
+>>> models.Base.metadata.create_all(bind=engine)
+>>> exit()
+```
+
+Verify the database by looking for `sql_app.db` in your project root directory. Then using `sqlite3` to verify the schema e.g.:
+
+```
+sqlite3 sql_app.db
+SQLite version 3.24.0 2018-06-04 19:24:41
+Enter ".help" for usage hints.
+sqlite> .schema
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+  ...
+);
+CREATE UNIQUE INDEX ix_users_email ON users (email);
+CREATE INDEX ix_users_id ON users (id);
+CREATE TABLE items (
+	id INTEGER NOT NULL, 
+  ...
+);
+CREATE INDEX ix_items_title ON items (title);
+...
+sqlite> .q
+```
+
+Manually access the database:
+
+```
+sqlite3 sql_app.db
+SQLite version 3.24.0 2018-06-04 19:24:41
+Enter ".help" for usage hints.
+>>> from app.database import *
+>>> db = SessionLocal()
+>>> from app.models import User
+>>> db.query(User).all()
+>>> [] # Empty
+```
+
 Run the app locally:
 
 ```

@@ -80,8 +80,14 @@ Enter ".help" for usage hints.
 
 Run the app locally:
 
+Set environment variables
 ```
 cd app
+export DB_CONNECTION=sqlite:///./sql_app.db # see https://docs.sqlalchemy.org/en/13/core/engines.html for examples
+export SECRET_KEY=changeme # to generate a key use: openssl rand -hex 32
+```
+
+```
 uvicorn main:app --reload
 ```
 

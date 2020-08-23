@@ -2,6 +2,13 @@ from typing import List, Optional
 
 from pydantic import BaseModel
 
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+    username: str
+
 class ItemBase(BaseModel):
     title: str
     description: Optional[str] = None
@@ -24,7 +31,8 @@ class UserCreate(UserBase):
 
 class User(UserBase):
     id: int
-    is_active: bool
+    disabled: bool
+    full_name: Optional[str] = None
     items: List[Item] = []
 
     class Config:

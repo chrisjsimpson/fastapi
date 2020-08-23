@@ -23,7 +23,7 @@ def upgrade():
         sa.Column("full_name", sa.String(), nullable=True),
         sa.Column("email", sa.String(), nullable=True),
         sa.Column("hashed_password", sa.String(), nullable=True),
-        sa.Column("is_active", sa.Boolean(), nullable=True),
+        sa.Column("disabled", sa.Boolean(), nullable=True),
         sa.Column("is_superuser", sa.Boolean(), nullable=True),
         sa.PrimaryKeyConstraint("id"),
     )
